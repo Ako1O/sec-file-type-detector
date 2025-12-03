@@ -1,2 +1,2 @@
 # FIle-type-identification-tool
-Show file's real fyle type with technology of magic numbers.
+Detects a file’s real type using magic numbers (file signatures), independent of extension.
