@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, Optional
 
 
 @dataclass(frozen=True)
@@ -76,7 +76,7 @@ def detect_file_type(path: str | Path, *, header_bytes: int = 4096) -> Detection
 
     header = _read_header(p, header_bytes)
 
-    detected: Optional[Signature] = None
+    detected: Signature | None = None
     for sig in SIGNATURES:
         try:
             if sig.match(header):

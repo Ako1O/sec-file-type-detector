@@ -1,7 +1,5 @@
 from pathlib import Path
 
-import pytest
-
 from sec_file_type_detector.detector import detect_file_type
 
 

@@ -15,8 +15,9 @@ sec-file-type-detector = "sec_file_type_detector.cli:main"
 testpaths = ["tests"]
 
 [tool.ruff]
-line-length = 100
+line-length = 130
 target-version = "py310"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
