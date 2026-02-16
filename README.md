@@ -125,11 +125,12 @@ sec-file-type-detector -r ~/Downloads --json report.json
 
 Designed for automation and integration into security workflows:
 
-| Code | Description |
-|------|------------|
-| `0` | Scan completed successfully. No mismatches or unknown file types detected. |
-| `1` | Scan completed, but at least one mismatch or unknown file type was found. |
-| `2` | Execution error (e.g., file not found, permission denied, invalid path). |
+| Exit Code | Meaning |
+|-----------|---------|
+| 0 | No mismatches or unknown files |
+| 1 | At least one mismatch or unknown file detected |
+| 2 | Runtime error (file not found, permission issue, etc.) |
+
 
 
 **Running Tests**
