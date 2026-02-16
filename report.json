@@ -1,0 +1,947 @@
+{
+  "scanned": 98,
+  "read_errors": 0,
+  "mismatches": 10,
+  "unknowns": 35,
+  "by_detected_type": {
+    "PDF document": 18,
+    "ZIP archive": 19,
+    "JPEG image": 3,
+    "Unknown": 35,
+    "PE binary (Windows EXE/DLL)": 18,
+    "PNG image": 5
+  },
+  "results": [
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\2-2021-du-en-20210513_(1189).pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\3-2019-du-melleklet-1-en_(1833).docx",
+      "extension": "docx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\5219692477051245965.jpg",
+      "extension": "jpg",
+      "detected_name": "JPEG image",
+      "detected_extensions": [
+        "jpg",
+        "jpeg"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\5219692477051245967.jpg",
+      "extension": "jpg",
+      "detected_name": "JPEG image",
+      "detected_extensions": [
+        "jpg",
+        "jpeg"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\5219692477051245968.jpg",
+      "extension": "jpg",
+      "detected_name": "JPEG image",
+      "detected_extensions": [
+        "jpg",
+        "jpeg"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Ableton - Live 12 Suite v12.2 x64 [06.2025, Multi, NO RUS] (R2R) [rutracker-6705111].torrent",
+      "extension": "torrent",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\AdvancedPythonprogramming-1.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\AdvancedPythonprogramming.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\AlecaFrame - Installer.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\AMT-v2.0.13-beta.zip",
+      "extension": "zip",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\anki-launcher-25.09-windows.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\ArdysaModsTools_Setup_x64.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Aseprite 1.3.15.5 x64 [2025, Multi + RUS] [rutracker-6772616].torrent",
+      "extension": "torrent",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Aseprite-v1.3.15.5.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\characters_\u0430\u0439\u0433\u0431\u043e\u0440\u0433.fch",
+      "extension": "fch",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\characters_\u0430\u0439\u0433\u0431\u043e\u0440\u0433.fch.old",
+      "extension": "old",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\characters_\u0430\u0439\u0433\u0431\u043e\u0440\u0433_backup_auto-20251229113726.fch",
+      "extension": "fch",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\characters_\u0430\u0439\u0433\u0431\u043e\u0440\u0433_backup_auto-20251230105450.fch",
+      "extension": "fch",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\characters_\u0430\u0439\u0433\u0431\u043e\u0440\u0433_backup_auto-20251230125856.fch",
+      "extension": "fch",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Controltechnology.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Cover-letter.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\CS-Closingexamseminar-1.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\CS-Closingexamseminar.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\CV_daniil_khersonets.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Datamining_las.pptx",
+      "extension": "pptx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Data_warehouse.pptx",
+      "extension": "pptx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Deadlock.Mod.Manager_0.8.2_x64-setup.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\desktop.ini",
+      "extension": "ini",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\DocumentpreparationwithLaTeX.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\EpicInstaller-19.1.5.msi",
+      "extension": "msi",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\fl1.m",
+      "extension": "m",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\fl2.m",
+      "extension": "m",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\fl3.m",
+      "extension": "m",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\fl4.m",
+      "extension": "m",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Focusrite-Control-2.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Further exercises with database design and use_week_V.pptx",
+      "extension": "pptx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\GRYPHLINK_1.0.0_6_6_endfield.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\gulfProject.session",
+      "extension": "session",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\gulfProject.session.gui",
+      "extension": "gui",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Halo.docx",
+      "extension": "docx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Install.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\IntroductionintoMaxima.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\IT_CV_daniilK.docx",
+      "extension": "docx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\LabViewbasics-1.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\LabViewbasics-2.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\LabViewbasics.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\magicadventure_forestMaskTexCache",
+      "extension": "",
+      "detected_name": "PNG image",
+      "detected_extensions": [
+        "png"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\magicadventure_heightTexCache",
+      "extension": "",
+      "detected_name": "PNG image",
+      "detected_extensions": [
+        "png"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\magicadventure_mapTexCache",
+      "extension": "",
+      "detected_name": "PNG image",
+      "detected_extensions": [
+        "png"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\MegabonkModders-CustomCharacterCreator-1.3.0.zip",
+      "extension": "zip",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\MegabonkModders-CustomCharacterCreator-1.4.0.zip",
+      "extension": "zip",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\MEGABONK_CustomCharacterLoader-1.4.0.zip",
+      "extension": "zip",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Neptun_Screenshot.png",
+      "extension": "png",
+      "detected_name": "PNG image",
+      "detected_extensions": [
+        "png"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\New Bitmap image.bmp",
+      "extension": "bmp",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\node-v20.20.0-x64.msi",
+      "extension": "msi",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\node-v25.6.1-x64.msi",
+      "extension": "msi",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\NordInstaller.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\PhioFit_Thesis.docx",
+      "extension": "docx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Professional_CV.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\pti-bsc-2021.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\qbittorrent_5.1.4_x64_setup(1).exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\qbittorrent_5.1.4_x64_setup.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Radmin_VPN_2.0.4899.9.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Relational database systems.pptx",
+      "extension": "pptx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Relational_DB_Maintance_week2.pptx",
+      "extension": "pptx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Release_x64.zip",
+      "extension": "zip",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Screenshot 2026-02-12 115826.png",
+      "extension": "png",
+      "detected_name": "PNG image",
+      "detected_extensions": [
+        "png"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\serverlist_recent",
+      "extension": "",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\serverlist_recent.old",
+      "extension": "old",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\TeljesitesiLap.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Thunderstore Mod Manager - Installer.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\UnityHubSetup-x64.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Vegasx-Cownoichi-1.1.0.zip",
+      "extension": "zip",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Vegasx-Cownoichi-1.1.1.zip",
+      "extension": "zip",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Vortex-1-1-15-2-1758718545.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\WebprogrammingII.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Week_IV_ER.pptx",
+      "extension": "pptx",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": true,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\worlds_goods.db",
+      "extension": "db",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\worlds_goods.fwl",
+      "extension": "fwl",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\[1-7] Romance Dawn [En Sub][480p].zip",
+      "extension": "zip",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\[DL] The Slormancer [L] [ENG + 3] (2025, RPG) (1.0.2c) [GOG] [rutracker-6042208].torrent",
+      "extension": "torrent",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\\u0417\u0430\u0434\u0430\u043d\u0438\u0435_\u0414\u042d_24.pdf",
+      "extension": "pdf",
+      "detected_name": "PDF document",
+      "detected_extensions": [
+        "pdf"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Release_x64\\ReadMe.txt",
+      "extension": "txt",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\The_Slormancer_live_1.0.2c_(83744)_win_gog\\setup_the_slormancer_live_1.0.2c_(83744).exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\visit101-data\\arabian_gulf.vtu",
+      "extension": "vtu",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\The_Slormancer_live_1.0.2c_(83744)_win_gog\\Bonus\\slormancer_soundtrack.zip",
+      "extension": "zip",
+      "detected_name": "ZIP archive",
+      "detected_extensions": [
+        "zip"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Release_x64\\Release\\config.ini",
+      "extension": "ini",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Release_x64\\Release\\ExplorerBlurMica.dll",
+      "extension": "dll",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Release_x64\\Release\\register.cmd",
+      "extension": "cmd",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Release_x64\\Release\\uninstall.cmd",
+      "extension": "cmd",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Data\\Data\\bathymetry.vti",
+      "extension": "vti",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Data\\Data\\gulf_of_aden.vts",
+      "extension": "vts",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Ableton Live 12 Suite v12.2\\ableton_live_suite_12.2_64\\Ableton Live 12 Suite Installer Data 1.cab",
+      "extension": "cab",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Ableton Live 12 Suite v12.2\\ableton_live_suite_12.2_64\\Ableton Live 12 Suite Installer Data 2.cab",
+      "extension": "cab",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Ableton Live 12 Suite v12.2\\ableton_live_suite_12.2_64\\Ableton Live 12 Suite Installer Data 3.cab",
+      "extension": "cab",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Ableton Live 12 Suite v12.2\\ableton_live_suite_12.2_64\\Ableton Live 12 Suite Installer Theme.xml",
+      "extension": "xml",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Ableton Live 12 Suite v12.2\\ableton_live_suite_12.2_64\\Ableton Live 12 Suite Installer.exe",
+      "extension": "exe",
+      "detected_name": "PE binary (Windows EXE/DLL)",
+      "detected_extensions": [
+        "exe",
+        "dll"
+      ],
+      "mismatch": false,
+      "unknown": false
+    },
+    {
+      "path": "C:\\Users\\Mrpfe\\Downloads\\Ableton Live 12 Suite v12.2\\R2R\\R2R.txt",
+      "extension": "txt",
+      "detected_name": null,
+      "detected_extensions": [],
+      "mismatch": false,
+      "unknown": true
+    }
+  ]
+}

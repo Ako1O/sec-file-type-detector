@@ -15,11 +15,21 @@ class Signature:
 @dataclass(frozen=True)
 class DetectionResult:
     path: Path
-    extension: str  # without dot, lowercase, "" if none
+    extension: str
     detected_name: str | None
     detected_extensions: tuple[str, ...]
     mismatch: bool
     unknown: bool
+
+    def to_json(self) -> dict:
+        return {
+            "path": str(self.path),
+            "extension": self.extension,
+            "detected_name": self.detected_name,
+            "detected_extensions": list(self.detected_extensions),
+            "mismatch": self.mismatch,
+            "unknown": self.unknown,
+        }
 
 
 def _is_pdf(b: bytes) -> bool:
