@@ -31,7 +31,7 @@ def _is_png(b: bytes) -> bool:
 
 
 def _is_jpeg(b: bytes) -> bool:
-    return b.startswith(b"\xFF\xD8\xFF")
+    return b.startswith(b"\xff\xd8\xff")
 
 
 def _is_zip(b: bytes) -> bool:
@@ -39,7 +39,7 @@ def _is_zip(b: bytes) -> bool:
 
 
 def _is_elf(b: bytes) -> bool:
-    return b.startswith(b"\x7FELF")
+    return b.startswith(b"\x7fELF")
 
 
 def _is_pe(b: bytes) -> bool:
@@ -47,7 +47,7 @@ def _is_pe(b: bytes) -> bool:
     if not b.startswith(b"MZ") or len(b) < 0x40:
         return False
     e_lfanew = int.from_bytes(b[0x3C:0x40], "little", signed=False)
-    return len(b) >= e_lfanew + 4 and b[e_lfanew:e_lfanew + 4] == b"PE\0\0"
+    return len(b) >= e_lfanew + 4 and b[e_lfanew : e_lfanew + 4] == b"PE\0\0"
 
 
 SIGNATURES: tuple[Signature, ...] = (
