@@ -53,24 +53,24 @@ Additional formats can be added easily by extending the signature list.
 
 ## Installation (Development Mode)
 
-Clone the repository:
+**Clone the repository:**
 ```bash
 git clone https://github.com/<your-username>/sec-file-type-detector.git
 cd sec-file-type-detector
 ```
 
-Create and activate a virtual environment:
+**Create and activate a virtual environment:**
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate   # Windows (Git Bash)
 ```
 
-Install in editable mode:
+**Install in editable mode:**
 ```bash
 pip install -e .
 ```
 
-Install development tools:
+**Install development tools:**
 ```bash
 pip install pytest ruff
 ```
@@ -94,27 +94,27 @@ If a file is renamed to disguise its true type:
 sec-file-type-detector suspicious.exe
 ```
 
-Output example:
+**Output example:**
 ```bash
 [MISMATCH] suspicious.exe  ext=exe  detected=PDF document
 ```
 
-Scan a directory recursively
+**Scan a directory recursively**
 ```bash
 sec-file-type-detector -r ~/Downloads
 ```
 
-Show only suspicious files
+**Show only suspicious files**
 ```bash
 sec-file-type-detector -r ~/Downloads --only-problems
 ```
 
-Generate a JSON report
+**Generate a JSON report**
 ```bash
 sec-file-type-detector -r ~/Downloads --json report.json
 ```
 
-The JSON report includes:
+**The JSON report includes:**
 - total scanned files
 - number of mismatches
 - number of unknown types
