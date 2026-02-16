@@ -146,14 +146,29 @@ ruff format .
 
 ---
 
-# Project Structure
+## Project Structure
+
+```text
 sec-file-type-detector/
 │
-├─ src/sec_file_type_detector/
-│  ├─ __init__.py
-│  ├─ detector.py
-│  └─ cli.py
+├─ src/
+│  └─ sec_file_type_detector/
+│     ├─ __init__.py
+│     ├─ detector.py
+│     └─ cli.py
 │
 ├─ tests/
-├─ .github/workflows/
-├─ pypr
+│  ├─ test_detector.py
+│  └─ test_cli_scan.py
+│
+├─ .github/
+│  └─ workflows/
+│     └─ ci.yml
+│
+├─ .vscode/
+│  └─ settings.json
+│
+├─ pyproject.toml
+├─ README.md
+└─ .gitignore
+```
