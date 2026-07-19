@@ -34,3 +34,44 @@ def test_unknown(tmp_path: Path):
     p = write_tmp(tmp_path, "x.bin", b"\x00\x01\x02\x03")
     r = detect_file_type(p)
     assert r.unknown is True
+
+
+def test_gif_detect(tmp_path: Path):
+    p = write_tmp(tmp_path, "a.gif", b"GIF89a" + b"x" * 10)
+    r = detect_file_type(p)
+    assert "GIF" in (r.detected_name or "")
+    assert r.mismatch is False
+
+
+def test_bmp_detect(tmp_path: Path):
+    p = write_tmp(tmp_path, "a.bmp", b"BM" + b"x" * 10)
+    r = detect_file_type(p)
+    assert "BMP" in (r.detected_name or "")
+    assert r.mismatch is False
+
+
+def test_gzip_detect(tmp_path: Path):
+    p = write_tmp(tmp_path, "a.gz", b"\x1f\x8b\x08\x00")
+    r = detect_file_type(p)
+    assert "GZIP" in (r.detected_name or "")
+    assert r.mismatch is False
+
+
+def test_docx_is_not_flagged_as_mismatch(tmp_path: Path):
+    # .docx/.xlsx/.pptx are ZIP containers under the hood — this should
+    # not be reported as a mismatch even though the extension isn't "zip".
+    p = write_tmp(tmp_path, "report.docx", b"PK\x03\x04" + b"x" * 10)
+    r = detect_file_type(p)
+    assert "ZIP" in (r.detected_name or "")
+    assert r.mismatch is False
+
+
+def test_exe_named_docx_is_mismatch(tmp_path: Path):
+    # Minimal DOS/PE header: "MZ" stub, e_lfanew at 0x3C pointing to
+    # offset 0x40, "PE\0\0" signature at that offset.
+    e_lfanew = (0x40).to_bytes(4, "little")
+    data = b"MZ" + b"\x00" * 58 + e_lfanew + b"PE\x00\x00"
+    p = write_tmp(tmp_path, "invoice.docx", data)
+    r = detect_file_type(p)
+    assert "PE" in (r.detected_name or "")
+    assert r.mismatch is True

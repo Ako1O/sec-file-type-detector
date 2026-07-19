@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Type Detector</title>
+<style>
+  :root {
+    --bg: #16171a;
+    --panel: #1e2023;
+    --panel-border: #33363b;
+    --text: #e8e9ea;
+    --text-dim: #9aa0a6;
+    --input-bg: #131416;
+    --input-border: #3a3d42;
+    --ok: #4caf6d;
+    --ok-bg: #1c2b21;
+    --ok-border: #2f4a37;
+    --bad: #e0555f;
+    --bad-bg: #2c1c1e;
+    --bad-border: #4a2c2f;
+    --warn: #d9a441;
+    --warn-bg: #2b2418;
+    --warn-border: #4a3d24;
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 40px 20px 60px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin: 0 0 8px;
+  }
+
+  p.subtitle {
+    color: var(--text-dim);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+    max-width: 640px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--panel-border);
+    margin: 20px 0 28px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    padding: 20px;
+    min-width: 0;
+  }
+
+  .panel h2 {
+    font-size: 15px;
+    margin: 0 0 6px;
+  }
+
+  .panel > p.hint {
+    color: var(--text-dim);
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin: 0 0 16px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+
+  .dropzone {
+    border: 1px dashed var(--input-border);
+    border-radius: 6px;
+    background: var(--input-bg);
+    padding: 22px 16px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-dim);
+    transition: border-color 0.15s;
+  }
+
+  .dropzone:hover,
+  .dropzone.drag {
+    border-color: #5a5e66;
+    color: var(--text);
+  }
+
+  .dropzone strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .filename-row {
+    margin-top: 12px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    word-break: break-all;
+  }
+
+  .filename-row span {
+    color: var(--text);
+    font-family: var(--mono);
+  }
+
+  .status-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 4px;
+    margin-top: 18px;
+  }
+
+  .status-badge.ok { color: var(--ok); background: var(--ok-bg); border: 1px solid var(--ok-border); }
+  .status-badge.bad { color: var(--bad); background: var(--bad-bg); border: 1px solid var(--bad-border); }
+  .status-badge.warn { color: var(--warn); background: var(--warn-bg); border: 1px solid var(--warn-border); }
+  .status-badge.idle { color: var(--text-dim); background: var(--input-bg); border: 1px solid var(--input-border); }
+
+  .status-banner {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.5;
+    display: none;
+  }
+
+  .status-banner.show { display: block; }
+  .status-banner.ok { background: var(--ok-bg); border: 1px solid var(--ok-border); color: var(--ok); }
+  .status-banner.bad { background: var(--bad-bg); border: 1px solid var(--bad-border); color: var(--bad); }
+  .status-banner.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); color: var(--warn); }
+
+  .details {
+    margin-top: 18px;
+    border-top: 1px solid var(--panel-border);
+    padding-top: 14px;
+    display: none;
+  }
+
+  .details.show { display: block; }
+
+  .details dl {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 8px;
+    column-gap: 10px;
+    margin: 0;
+    font-size: 13px;
+  }
+
+  .details dt { color: var(--text-dim); }
+  .details dd { margin: 0; font-family: var(--mono); word-break: break-all; }
+
+  .hex-preview {
+    margin-top: 14px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+    display: none;
+  }
+
+  .hex-preview.show { display: block; }
+
+  table.sig-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin-top: 4px;
+  }
+
+  table.sig-table th {
+    text-align: left;
+    color: var(--text-dim);
+    font-weight: 600;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--panel-border);
+  }
+
+  table.sig-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--panel-border);
+    vertical-align: top;
+    overflow-wrap: anywhere;
+  }
+
+  table.sig-table th:first-child,
+  table.sig-table td:first-child {
+    width: 52%;
+  }
+
+  table.sig-table td.ext {
+    color: var(--text-dim);
+    font-family: var(--mono);
+  }
+
+  table.sig-table tr:last-child td { border-bottom: none; }
+
+  .field-row {
+    margin-bottom: 16px;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    color: var(--text);
+    padding: 8px 10px;
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  input[type="number"]:focus {
+    outline: none;
+    border-color: #5a5e66;
+  }
+
+  .footnote {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--panel-border);
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .footnote code {
+    font-family: var(--mono);
+    background: var(--input-bg);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>File Type Detector</h1>
+  <p class="subtitle">
+    Pick a file below to see whether its content actually matches its extension.
+    Everything runs locally in this browser; nothing is uploaded anywhere.
+  </p>
+  <hr>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Try a file</h2>
+      <p class="hint">The file never leaves your computer &mdash; detection happens entirely in this page.</p>
+
+      <div class="dropzone" id="dropzone">
+        <div>Click to choose a file, or drag one here</div>
+        <div class="filename-row" id="filenameRow" style="display:none;">Selected: <span id="filenameText"></span></div>
+      </div>
+      <input type="file" id="fileInput">
+
+      <div id="statusBadge"></div>
+      <div class="status-banner" id="statusBanner"></div>
+
+      <div class="details" id="details">
+        <dl>
+          <dt>File name</dt><dd id="dName">&mdash;</dd>
+          <dt>Claimed extension</dt><dd id="dExt">&mdash;</dd>
+          <dt>Detected type</dt><dd id="dType">&mdash;</dd>
+          <dt>Expected extension(s)</dt><dd id="dExpected">&mdash;</dd>
+          <dt>Bytes inspected</dt><dd id="dBytes">&mdash;</dd>
+        </dl>
+        <div class="hex-preview" id="hexPreview"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Detection settings</h2>
+      <p class="hint">Mirrors the <code>--bytes</code> option in the command-line tool. Detection only ever needs the first few bytes of a file, never the whole thing.</p>
+
+      <div class="field-row">
+        <label for="headerBytes">Header bytes to read</label>
+        <input type="number" id="headerBytes" value="4096" min="16" max="65536" step="16">
+      </div>
+
+      <h2 style="margin-top:20px;">Signatures checked</h2>
+      <table class="sig-table">
+        <thead>
+          <tr><th>Format</th><th>Extension(s)</th></tr>
+        </thead>
+        <tbody id="sigTableBody"></tbody>
+      </table>
+
+      <div class="footnote">
+        This demo re-implements the same detection rules as the
+        <code>sec-file-type-detector</code> command-line tool, purely in-browser,
+        for quick walkthroughs. The full tool can also scan an entire folder at
+        once and write a JSON report for automation &mdash; see the project README.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  function bytesStartWith(bytes, prefix) {
+    if (bytes.length < prefix.length) return false;
+    for (var i = 0; i < prefix.length; i++) {
+      if (bytes[i] !== prefix[i]) return false;
+    }
+    return true;
+  }
+
+  function ascii(str) {
+    var out = [];
+    for (var i = 0; i < str.length; i++) out.push(str.charCodeAt(i));
+    return out;
+  }
+
+  function isPdf(b) { return bytesStartWith(b, ascii("%PDF-")); }
+  function isPng(b) { return bytesStartWith(b, [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]); }
+  function isJpeg(b) { return bytesStartWith(b, [0xff, 0xd8, 0xff]); }
+  function isGif(b) { return bytesStartWith(b, ascii("GIF87a")) || bytesStartWith(b, ascii("GIF89a")); }
+  function isBmp(b) { return bytesStartWith(b, ascii("BM")); }
+  function isZip(b) {
+    return bytesStartWith(b, [0x50, 0x4b, 0x03, 0x04]) ||
+           bytesStartWith(b, [0x50, 0x4b, 0x05, 0x06]) ||
+           bytesStartWith(b, [0x50, 0x4b, 0x07, 0x08]);
+  }
+  function isGzip(b) { return bytesStartWith(b, [0x1f, 0x8b]); }
+  function is7z(b) { return bytesStartWith(b, [0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c]); }
+  function isRar(b) {
+    return bytesStartWith(b, [0x52, 0x61, 0x72, 0x21, 0x1a, 0x07, 0x00]) ||
+           bytesStartWith(b, [0x52, 0x61, 0x72, 0x21, 0x1a, 0x07, 0x01, 0x00]);
+  }
+  function isElf(b) { return bytesStartWith(b, [0x7f, 0x45, 0x4c, 0x46]); }
+  function isPe(b) {
+    if (!bytesStartWith(b, ascii("MZ")) || b.length < 0x40) return false;
+    var e = b[0x3c] | (b[0x3d] << 8) | (b[0x3e] << 16) | (b[0x3f] << 24);
+    if (b.length < e + 4) return false;
+    return b[e] === 0x50 && b[e + 1] === 0x45 && b[e + 2] === 0x00 && b[e + 3] === 0x00;
+  }
+
+  var SIGNATURES = [
+    { name: "PDF document", exts: ["pdf"], test: isPdf },
+    { name: "PNG image", exts: ["png"], test: isPng },
+    { name: "JPEG image", exts: ["jpg", "jpeg"], test: isJpeg },
+    { name: "GIF image", exts: ["gif"], test: isGif },
+    { name: "BMP image", exts: ["bmp"], test: isBmp },
+    { name: "ZIP archive", exts: ["zip", "docx", "xlsx", "pptx", "jar", "apk"], test: isZip },
+    { name: "GZIP archive", exts: ["gz", "tgz"], test: isGzip },
+    { name: "7-Zip archive", exts: ["7z"], test: is7z },
+    { name: "RAR archive", exts: ["rar"], test: isRar },
+    { name: "ELF binary (Linux/Unix)", exts: ["elf"], test: isElf },
+    { name: "PE binary (Windows EXE/DLL)", exts: ["exe", "dll"], test: isPe }
+  ];
+
+  var sigBody = document.getElementById("sigTableBody");
+  SIGNATURES.forEach(function (sig) {
+    var tr = document.createElement("tr");
+    var tdName = document.createElement("td");
+    tdName.textContent = sig.name;
+    var tdExt = document.createElement("td");
+    tdExt.className = "ext";
+    tdExt.textContent = sig.exts.map(function (e) { return "." + e; }).join(", ");
+    tr.appendChild(tdName);
+    tr.appendChild(tdExt);
+    sigBody.appendChild(tr);
+  });
+
+  function getExtension(filename) {
+    var idx = filename.lastIndexOf(".");
+    if (idx === -1 || idx === filename.length - 1) return "";
+    return filename.slice(idx + 1).toLowerCase();
+  }
+
+  function toHexPreview(bytes, count) {
+    var n = Math.min(count, bytes.length);
+    var hexParts = [];
+    var asciiParts = [];
+    for (var i = 0; i < n; i++) {
+      var b = bytes[i];
+      hexParts.push(b.toString(16).padStart(2, "0"));
+      asciiParts.push(b >= 0x20 && b < 0x7f ? String.fromCharCode(b) : ".");
+    }
+    return hexParts.join(" ") + "\n" + asciiParts.join("");
+  }
+
+  var dropzone = document.getElementById("dropzone");
+  var fileInput = document.getElementById("fileInput");
+  var filenameRow = document.getElementById("filenameRow");
+  var filenameText = document.getElementById("filenameText");
+  var statusBadge = document.getElementById("statusBadge");
+  var statusBanner = document.getElementById("statusBanner");
+  var details = document.getElementById("details");
+  var hexPreview = document.getElementById("hexPreview");
+  var headerBytesInput = document.getElementById("headerBytes");
+
+  dropzone.addEventListener("click", function () { fileInput.click(); });
+  dropzone.addEventListener("dragover", function (e) {
+    e.preventDefault();
+    dropzone.classList.add("drag");
+  });
+  dropzone.addEventListener("dragleave", function () {
+    dropzone.classList.remove("drag");
+  });
+  dropzone.addEventListener("drop", function (e) {
+    e.preventDefault();
+    dropzone.classList.remove("drag");
+    if (e.dataTransfer.files.length) {
+      handleFile(e.dataTransfer.files[0]);
+    }
+  });
+  fileInput.addEventListener("change", function () {
+    if (fileInput.files.length) handleFile(fileInput.files[0]);
+  });
+
+  function setBadge(kind, text) {
+    statusBadge.innerHTML = '<span class="status-badge ' + kind + '">' + text + "</span>";
+  }
+
+  function setBanner(kind, text) {
+    statusBanner.className = "status-banner show " + kind;
+    statusBanner.textContent = text;
+  }
+
+  function handleFile(file) {
+    filenameRow.style.display = "block";
+    filenameText.textContent = file.name;
+
+    var maxBytes = parseInt(headerBytesInput.value, 10) || 4096;
+    var slice = file.slice(0, maxBytes);
+    var reader = new FileReader();
+
+    reader.onload = function () {
+      var bytes = new Uint8Array(reader.result);
+      var ext = getExtension(file.name);
+
+      var detected = null;
+      for (var i = 0; i < SIGNATURES.length; i++) {
+        if (SIGNATURES[i].test(bytes)) { detected = SIGNATURES[i]; break; }
+      }
+
+      details.classList.add("show");
+      hexPreview.classList.add("show");
+      document.getElementById("dName").textContent = file.name;
+      document.getElementById("dExt").textContent = ext ? "." + ext : "(none)";
+      document.getElementById("dBytes").textContent = bytes.length + " of " + maxBytes + " requested";
+      hexPreview.textContent = bytes.length ? toHexPreview(bytes, 32) : "(empty file)";
+
+      if (!detected) {
+        document.getElementById("dType").textContent = "Unrecognized";
+        document.getElementById("dExpected").textContent = "—";
+        setBadge("warn", "Unknown");
+        setBanner("warn", "The content doesn't match any signature this tool knows. That's not necessarily dangerous, but it means the file's real type can't be confirmed here.");
+        return;
+      }
+
+      var mismatch = !!ext && detected.exts.indexOf(ext) === -1;
+      document.getElementById("dType").textContent = detected.name;
+      document.getElementById("dExpected").textContent = detected.exts.map(function (e) { return "." + e; }).join(", ");
+
+      if (mismatch) {
+        setBadge("bad", "Mismatch");
+        setBanner("bad", "This file is named ." + ext + ", but its content is actually a " + detected.name + ". That mismatch is exactly what file-type spoofing looks like — treat it as suspicious before opening or accepting it.");
+      } else {
+        setBadge("ok", "OK");
+        setBanner("ok", "The file's content matches its extension. Nothing suspicious here.");
+      }
+    };
+
+    reader.readAsArrayBuffer(slice);
+  }
+})();
+</script>
+</body>
+</html>

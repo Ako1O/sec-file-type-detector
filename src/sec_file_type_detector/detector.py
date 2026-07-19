@@ -60,11 +60,38 @@ def _is_pe(b: bytes) -> bool:
     return len(b) >= e_lfanew + 4 and b[e_lfanew : e_lfanew + 4] == b"PE\0\0"
 
 
+def _is_gif(b: bytes) -> bool:
+    return b.startswith(b"GIF87a") or b.startswith(b"GIF89a")
+
+
+def _is_bmp(b: bytes) -> bool:
+    return b.startswith(b"BM")
+
+
+def _is_gzip(b: bytes) -> bool:
+    return b.startswith(b"\x1f\x8b")
+
+
+def _is_7z(b: bytes) -> bool:
+    return b.startswith(b"7z\xbc\xaf\x27\x1c")
+
+
+def _is_rar(b: bytes) -> bool:
+    return b.startswith(b"Rar!\x1a\x07\x00") or b.startswith(b"Rar!\x1a\x07\x01\x00")
+
+
 SIGNATURES: tuple[Signature, ...] = (
     Signature("PDF document", ("pdf",), _is_pdf),
     Signature("PNG image", ("png",), _is_png),
     Signature("JPEG image", ("jpg", "jpeg"), _is_jpeg),
-    Signature("ZIP archive", ("zip",), _is_zip),
+    Signature("GIF image", ("gif",), _is_gif),
+    Signature("BMP image", ("bmp",), _is_bmp),
+    # ZIP-based container: also covers modern Office files and a few other
+    # common formats that are, under the hood, just a ZIP archive.
+    Signature("ZIP archive", ("zip", "docx", "xlsx", "pptx", "jar", "apk"), _is_zip),
+    Signature("GZIP archive", ("gz", "tgz"), _is_gzip),
+    Signature("7-Zip archive", ("7z",), _is_7z),
+    Signature("RAR archive", ("rar",), _is_rar),
     Signature("ELF binary (Linux/Unix)", ("elf",), _is_elf),
     Signature("PE binary (Windows EXE/DLL)", ("exe", "dll"), _is_pe),
 )
